@@ -30,10 +30,12 @@ dist-ssr
 pro_config.js
 
 
-# packages/build-h5
-# packages/server
-# packages/editor
-# packages/activity-components
-# packages/shared
-# packages/base-components
-packages/*
+packages/build-h5
+packages/server
+packages/editor
+packages/activity-components
+packages/shared
+packages/global-types
+
+
+
