@@ -1,0 +1,16 @@
+{
+  "name": "@yq-editor/global-types",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "scripts": {
+
+  },
+  "dependencies": {
+    "ant-design-vue": "3.2.6"
+  }
+}
