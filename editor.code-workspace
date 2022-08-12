@@ -1,0 +1,27 @@
+{
+  "folders": [
+    {
+      "path": "packages/editor",
+      "name": "编辑器"
+    },
+    {
+      "path": "packages/server",
+      "name": "服务端"
+    },
+    {
+      "path": "packages/shared",
+      "name": "公共方法库"
+    },
+    {
+      "path": "packages/base-components",
+      "name": "基础组件库"
+    },
+    {
+      "path": "packages/activity-components",
+      "name": "活动组件库"
+    },
+  ],
+  "settings": {
+    "testing.automaticallyOpenPeekView": "never"
+  }
+}

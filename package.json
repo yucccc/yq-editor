@@ -1,0 +1,62 @@
+{
+  "name": "biz-editor",
+  "version": "1.0.0",
+  "description": "网页活动编辑器-快速生成网页活动",
+  "author": "yucccc",
+  "license": "ISC",
+  "keywords": [
+    "editor",
+    "activity",
+    "web",
+    "h5",
+    "web-activity",
+    "h5-activity-editor",
+    "web-activity-editor"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "run-p dev:editor dev:server",
+    "build": "run-p build:editor build:server ",
+    "dev:editor": "pnpm run --filter @yq-editor/editor dev",
+    "build:editor": "pnpm run --filter @yq-editor/editor build",
+    "dev:server": "pnpm run --filter @yq-editor/server dev",
+    "build:server": "pnpm run --filter @yq-editor/server start:prod",
+    "dev:bp": "pnpm run --filter @yq-editor/build-h5 dev",
+    "build:bp": "pnpm run --filter @yq-editor/build-h5 build",
+    "dev:bc": "pnpm run --filter @yq-editor/base-components dev",
+    "build:bc": "pnpm run --filter @yq-editor/base-components build",
+    "dev:ac": "pnpm run --filter @yq-editor/activity-components dev",
+    "build:ac": "pnpm run --filter @yq-editor/activity-components build",
+    "test": "pnpm run test:editor && pnpm run test:shared",
+    "test:shared": "pnpm run --filter @yq-editor/shared test",
+    "test:editor": "pnpm run --filter @yq-editor/editor test",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@yq-editor/activity-components": "workspace:*",
+    "@yq-editor/base-components": "workspace:*",
+    "@yq-editor/shared": "workspace:*",
+    "axios": "^0.26.1",
+    "lodash-es": "^4.17.21",
+    "qs": "^6.11.0",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.25.1",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^17.0.45",
+    "@types/qs": "^6.9.7",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "@yq-editor/global-types": "workspace:*",
+    "cross-env": "^7.0.3",
+    "csstype": "^3.1.0",
+    "eslint": "^8.16.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "~4.1.5",
+    "vite": "^3.0.4",
+    "vitest": "^0.15.0",
+    "vue-tsc": "^0.38.4"
+  }
+}
