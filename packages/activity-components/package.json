@@ -1,0 +1,32 @@
+{
+  "name": "@yq-editor/activity-components",
+  "version": "0.5.25",
+  "private": true,
+  "author": "Yucccc",
+  "exports": {
+    ".": {
+      "require": "./dist/activity-components.umd.js",
+      "import": "./dist/activity-components.mjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "main": "./dist/activity-components.umd.js",
+  "module": "./dist/activity-components.mjs",
+  "types": "./dist/activity-components.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": " vite build",
+    "preview": "vite preview",
+    "clean:lib": "rimraf dist"
+  },
+  "dependencies": {
+    "mitt": "^3.0.0"
+  },
+  "devDependencies": {
+    "vite-plugin-dts": "^1.4.0",
+    "vite-plugin-vue-type-imports": "^0.2.0"
+  }
+}

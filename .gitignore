@@ -32,7 +32,6 @@ pro_config.js
 
 packages/build-h5
 packages/server
-packages/activity-components
 
 
 dump.rdb
