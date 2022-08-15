@@ -39,13 +39,11 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-
+    // VueTypeImports(),
     dts({
       insertTypesEntry: true,
       copyDtsFiles: true,
       cleanVueFileName: true,
     }),
-    // VueTypeImports(),
-
   ],
 })

@@ -2,7 +2,7 @@
 import type { PropType } from 'vue'
 import { defineComponent, reactive } from 'vue'
 import { cloneDeep } from 'lodash-es'
-import type { StateConfigType } from 'activity-components/dist/components/state-btn/types'
+import type { StateConfigType } from '@yq-editor/activity-components/dist/activity-components/src/components/state-btn/props'
 const stateObj: StateConfigType = {
   key: '',
   text: '',

@@ -1,9 +1,6 @@
 /**
  * 可用组件列表配置
- */
-import type { StateConfigType } from 'activity-components/dist/components/state-btn/types'
-import type { ActionSetType } from '@yq-editor/global-types'
-// import { imageDefaultProps, textDefaultProps } from '@/config/componentsPath'
+ */import type { ActionSetType } from '@yq-editor/global-types'
 // 重新请求下回显接口
 const reloadState = (): ActionSetType => ({
   type: 'request',
@@ -142,9 +139,6 @@ const defaultSignComponentTemplate = {
     src: 'http://dl.hfrong.cn/osstest/1632898696039-getBtn.0df26f80.png',
   },
 }
-interface MyStateConfigType extends StateConfigType {
-  actionConfig: ActionSetType
-}
 
 // 抽奖回调
 const defaultLotteryCallback = {
@@ -210,7 +204,7 @@ const defaultTrackComponentTemplate = {
       top: '0px',
       width: '40px',
       height: '40px',
-      src: 'http://dl.hfrong.cn/hd_activities/1657881686870-logo.png',
+      src: 'https://yq-editor-oss.oss-cn-guangzhou.aliyuncs.com/hd_activities/1660284946218-apple-touch-icon.png',
     },
     {
       width: '40px',
@@ -219,7 +213,7 @@ const defaultTrackComponentTemplate = {
       left: '130px',
       top: '0px',
 
-      src: 'http://dl.hfrong.cn/hd_activities/1657881686870-logo.png',
+      src: 'https://yq-editor-oss.oss-cn-guangzhou.aliyuncs.com/hd_activities/1660284946218-apple-touch-icon.png',
     },
     {
       width: '40px',
@@ -227,7 +221,7 @@ const defaultTrackComponentTemplate = {
       position: 'absolute',
       left: '250px',
       top: '0px',
-      src: 'http://dl.hfrong.cn/hd_activities/1657881686870-logo.png',
+      src: 'https://yq-editor-oss.oss-cn-guangzhou.aliyuncs.com/hd_activities/1660284946218-apple-touch-icon.png',
     },
     {
       width: '40px',
@@ -236,7 +230,7 @@ const defaultTrackComponentTemplate = {
       position: 'absolute',
       left: '250px',
       top: '80px',
-      src: 'http://dl.hfrong.cn/hd_activities/1657881686870-logo.png',
+      src: 'https://yq-editor-oss.oss-cn-guangzhou.aliyuncs.com/hd_activities/1660284946218-apple-touch-icon.png',
     },
     {
       width: '40px',
@@ -245,7 +239,7 @@ const defaultTrackComponentTemplate = {
       position: 'absolute',
       left: '250px',
       top: '170px',
-      src: 'http://dl.hfrong.cn/hd_activities/1657881686870-logo.png',
+      src: 'https://yq-editor-oss.oss-cn-guangzhou.aliyuncs.com/hd_activities/1660284946218-apple-touch-icon.png',
     },
     {
       width: '40px',
@@ -254,7 +248,7 @@ const defaultTrackComponentTemplate = {
       position: 'absolute',
       left: '130px',
       top: '170px',
-      src: 'http://dl.hfrong.cn/hd_activities/1657881686870-logo.png',
+      src: 'https://yq-editor-oss.oss-cn-guangzhou.aliyuncs.com/hd_activities/1660284946218-apple-touch-icon.png',
     },
     {
       width: '40px',
@@ -263,7 +257,7 @@ const defaultTrackComponentTemplate = {
       position: 'absolute',
       left: '0px',
       top: '170px',
-      src: 'http://dl.hfrong.cn/hd_activities/1657881686870-logo.png',
+      src: 'https://yq-editor-oss.oss-cn-guangzhou.aliyuncs.com/hd_activities/1660284946218-apple-touch-icon.png',
     },
     {
       width: '40px',
@@ -272,7 +266,7 @@ const defaultTrackComponentTemplate = {
       position: 'absolute',
       left: '0px',
       top: '80px',
-      src: 'http://dl.hfrong.cn/hd_activities/1657881686870-logo.png',
+      src: 'https://yq-editor-oss.oss-cn-guangzhou.aliyuncs.com/hd_activities/1660284946218-apple-touch-icon.png',
     },
   ],
   __showComponent: {

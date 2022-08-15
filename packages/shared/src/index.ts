@@ -3,6 +3,7 @@ export * from './compile'
 export * from './request'
 export * from './pickStyle'
 export * from './initApiData'
+export * from './emitter'
 
 try {
   // const a = import.meta.glob('./business/request/**.ts')

@@ -18,6 +18,7 @@ importers:
       csstype: ^3.1.0
       eslint: ^8.16.0
       lodash-es: ^4.17.21
+      mitt: ^3.0.0
       npm-run-all: ^4.1.5
       qs: ^6.11.0
       typescript: ~4.1.5
@@ -31,6 +32,7 @@ importers:
       '@yq-editor/shared': link:packages/shared
       axios: 0.26.1
       lodash-es: 4.17.21
+      mitt: 3.0.0
       qs: 6.11.0
       vue: 3.2.37
     devDependencies:
@@ -52,36 +54,24 @@ importers:
   packages/activity-components:
     specifiers:
       '@types/animejs': ^3.1.4
-      '@vitejs/plugin-vue': ^2.3.3
-      '@yq-editor/shared': workspace:*
       animejs: ^3.2.1
-      csstype: ^3.1.0
       mitt: ^3.0.0
-      vite: ^2.9.9
-      vite-plugin-dts: ^1.2.0
+      vite-plugin-dts: ^1.4.0
       vite-plugin-vue-type-imports: ^0.2.0
-      vue: ^3.2.25
-      vue-tsc: ^0.34.7
     dependencies:
-      '@yq-editor/shared': link:../shared
       animejs: 3.2.1
       mitt: 3.0.0
-      vue: 3.2.37
     devDependencies:
       '@types/animejs': 3.1.5
-      '@vitejs/plugin-vue': 2.3.3_vite@2.9.14+vue@3.2.37
-      csstype: 3.1.0
-      vite: 2.9.14
-      vite-plugin-dts: 1.4.1_vite@2.9.14
+      vite-plugin-dts: 1.4.1_vite@3.0.4
       vite-plugin-vue-type-imports: 0.2.0_2yymnzrok6eda47acnj2yjm3ae
-      vue-tsc: 0.34.17_typescript@4.7.4
 
   packages/base-components:
     specifiers:
-      vite-plugin-dts: ^1.4.1
+      vite-plugin-dts: 1.4.0
       vite-plugin-vue-type-imports: ^0.2.0
     devDependencies:
-      vite-plugin-dts: 1.4.1_vite@3.0.4
+      vite-plugin-dts: 1.4.0_vite@3.0.4
       vite-plugin-vue-type-imports: 0.2.0_2yymnzrok6eda47acnj2yjm3ae
 
   packages/build-h5:
@@ -1508,17 +1498,6 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue/2.3.3_vite@2.9.14+vue@3.2.37:
-    resolution: {integrity: sha512-SmQLDyhz+6lGJhPELsBdzXGc+AcaT8stgkbiTFGpXPe8Tl1tJaBw1A6pxDqDuRsVkD8uscrkx3hA7QDOoKYtyw==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      vite: ^2.5.10
-      vue: ^3.2.25
-    dependencies:
-      vite: 2.9.14
-      vue: 3.2.37
-    dev: true
-
   /@vitejs/plugin-vue/2.3.3_vite@3.0.4+vue@3.2.37:
     resolution: {integrity: sha512-SmQLDyhz+6lGJhPELsBdzXGc+AcaT8stgkbiTFGpXPe8Tl1tJaBw1A6pxDqDuRsVkD8uscrkx3hA7QDOoKYtyw==}
     engines: {node: '>=12.0.0'}
@@ -1537,7 +1516,7 @@ packages:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 3.0.4_less@4.1.3
+      vite: 3.0.4
       vue: 3.2.37
     dev: true
 
@@ -1546,12 +1525,6 @@ packages:
     dependencies:
       '@volar/shared': 0.29.8
       '@volar/source-map': 0.29.8
-    dev: true
-
-  /@volar/code-gen/0.34.17:
-    resolution: {integrity: sha512-rHR7BA71BJ/4S7xUOPMPiB7uk6iU9oTWpEMZxFi5VGC9iJmDncE82WzU5iYpcbOBCVHsOjMh0+5CGMgdO6SaPA==}
-    dependencies:
-      '@volar/source-map': 0.34.17
     dev: true
 
   /@volar/code-gen/0.38.9:
@@ -1583,10 +1556,6 @@ packages:
       '@volar/shared': 0.29.8
     dev: true
 
-  /@volar/source-map/0.34.17:
-    resolution: {integrity: sha512-3yn1IMXJGGWB/G817/VFlFMi8oh5pmE7VzUqvgMZMrppaZpKj6/juvJIEiXNxRsgWc0RxIO8OSp4htdPUg1Raw==}
-    dev: true
-
   /@volar/source-map/0.38.9:
     resolution: {integrity: sha512-ba0UFoHDYry+vwKdgkWJ6xlQT+8TFtZg1zj9tSjj4PykW1JZDuM0xplMotLun4h3YOoYfY9K1huY5gvxmrNLIw==}
     dev: true
@@ -1610,16 +1579,6 @@ packages:
       upath: 2.0.1
     dev: true
 
-  /@volar/vue-code-gen/0.34.17:
-    resolution: {integrity: sha512-17pzcK29fyFWUc+C82J3JYSnA+jy3QNrIldb9kPaP9Itbik05ZjEIyEue9FjhgIAuHeYSn4LDM5s6nGjxyfhsQ==}
-    dependencies:
-      '@volar/code-gen': 0.34.17
-      '@volar/source-map': 0.34.17
-      '@vue/compiler-core': 3.2.37
-      '@vue/compiler-dom': 3.2.37
-      '@vue/shared': 3.2.37
-    dev: true
-
   /@volar/vue-code-gen/0.38.9:
     resolution: {integrity: sha512-tzj7AoarFBKl7e41MR006ncrEmNPHALuk8aG4WdDIaG387X5//5KhWC5Ff3ZfB2InGSeNT+CVUd74M0gS20rjA==}
     dependencies:
@@ -1628,16 +1587,6 @@ packages:
       '@vue/compiler-core': 3.2.37
       '@vue/compiler-dom': 3.2.37
       '@vue/shared': 3.2.37
-    dev: true
-
-  /@volar/vue-typescript/0.34.17:
-    resolution: {integrity: sha512-U0YSVIBPRWVPmgJHNa4nrfq88+oS+tmyZNxmnfajIw9A/GOGZQiKXHC0k09SVvbYXlsjgJ6NIjhm9NuAhGRQjg==}
-    dependencies:
-      '@volar/code-gen': 0.34.17
-      '@volar/source-map': 0.34.17
-      '@volar/vue-code-gen': 0.34.17
-      '@vue/compiler-sfc': 3.2.37
-      '@vue/reactivity': 3.2.37
     dev: true
 
   /@volar/vue-typescript/0.38.9:
@@ -7093,8 +7042,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
-  /vite-plugin-dts/1.4.1_vite@2.9.14:
-    resolution: {integrity: sha512-jo7E4ZeheD2o48oGiI3EygPbej7ZkGFHg3GVTt7Wuo6NgzThLvuzGGuduaFpnhJOGi1piDFsu6oui/wDKIIORQ==}
+  /vite-plugin-dts/1.4.0_vite@3.0.4:
+    resolution: {integrity: sha512-RyDCjQzVxUeDqF+Rl1hQT+t/rKmvfvo04gaGV/l3597FpeIWGKtNF1S4x509Kx1AfHOjLa1JdmjVgnSEIv+lpw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vite: '>=2.4.4'
@@ -7106,7 +7055,7 @@ packages:
       fast-glob: 3.2.11
       fs-extra: 10.1.0
       ts-morph: 14.0.0
-      vite: 2.9.14
+      vite: 3.0.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7457,16 +7406,6 @@ packages:
       '@volar/shared': 0.29.8
       typescript: 4.7.4
       vscode-vue-languageservice: 0.29.8
-    dev: true
-
-  /vue-tsc/0.34.17_typescript@4.7.4:
-    resolution: {integrity: sha512-jzUXky44ZLHC4daaJag7FQr3idlPYN719/K1eObGljz5KaS2UnVGTU/XSYCd7d6ampYYg4OsyalbHyJIxV0aEQ==}
-    hasBin: true
-    peerDependencies:
-      typescript: '*'
-    dependencies:
-      '@volar/vue-typescript': 0.34.17
-      typescript: 4.7.4
     dev: true
 
   /vue-tsc/0.38.9_typescript@4.1.6:
