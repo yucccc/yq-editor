@@ -60,7 +60,8 @@
 
 ## 🐰 项目逻辑图
 <p align="center">
-  <img alt="" src="./低代码逻辑.drawio.png">
+
+  <img alt="" src="https://yq-editor-oss.oss-cn-guangzhou.aliyuncs.com/%E4%BD%8E%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91.drawio.png">
 </p>
 
 
