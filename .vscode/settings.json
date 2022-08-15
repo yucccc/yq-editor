@@ -3,7 +3,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "unocss.root": "packages/client",
+  "unocss.root": "packages/*",
   "search.followSymlinks": false,
   "files.exclude": {
     "**/.git": true,

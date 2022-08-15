@@ -186,9 +186,12 @@ const preview = async (previewApi: any, callback: Function) => {
 }
 
 const showLocalPreview = async () => {
+  console.log('%c [ showLocalPreview ]-189-「Editor」', 'font-size:13px; background:pink; color:#bf2c9f;')
   if (state.previewVisible) { return false }
   preview(previewLocalWorkApi, async (data: any) => {
-    if (preSetting.value) {
+    console.log('%c [ data ]-191-「Editor」', 'font-size:13px; background:pink; color:#bf2c9f;', data, preSetting)
+
+    if (preSetting.value.userInfo) {
       let userInfo = preSetting.value.userInfo
       userInfo = Object.keys(userInfo).reduce((t, c) => {
         t[c] = encodeURIComponent(userInfo[c])

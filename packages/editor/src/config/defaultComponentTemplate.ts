@@ -108,7 +108,7 @@ const defaultImageTemplates = [
     width: '100px',
     layerName: '图片组件',
     height: '100px',
-    src: 'https://yq-editor-oss.oss-cn-guangzhou.aliyuncs.com/hd_activities/1660284946218-apple-touch-icon.png',
+    src: 'https://yq-editor-oss.oss-cn-guangzhou.aliyuncs.com/logo.png',
     actionConfig: { type: '' },
     isLockScale: true,
     // 会被删掉

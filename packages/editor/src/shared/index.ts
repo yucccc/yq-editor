@@ -80,29 +80,25 @@ export const insertAt = (arr: any[], index: number, newItem: any) => {
  * @returns 节点截图base64
  */
 export const getDomScreenshotImg = async function (dom: Node, sn: string) {
-  const width = (dom as unknown as HTMLElement).offsetWidth
+  const width = (dom as HTMLElement).offsetWidth
   const height = 1.637 * width
-
-  let base64Img
-
   try {
-    base64Img = await domtoimage.toPng(dom, {
+    const base64Img = await domtoimage.toPng(dom, {
       width,
       height,
+      cacheBust: true,
     })
+    const { blob, imgType, mimeType } = base64ToBlob(base64Img)
+    const file = blobToFile(blob, `screenshot.${imgType}`, mimeType)
+    const formData = new FormData()
+    formData.append('files', file)
+    const res = await uploaderApi(formData, sn)
+    return res.data
   }
   catch (error) {
-    throw {
-      source: 'screen error',
-      error,
-    }
+    message.error('截图失败 可能是cdn未设置图片跨域 请检查')
+    throw new Error(error.message)
   }
-  const { blob, imgType, mimeType } = base64ToBlob(base64Img)
-  const file = blobToFile(blob, `screenshot.${imgType}`, mimeType)
-  const formData = new FormData()
-  formData.append('files', file)
-  const res = await uploaderApi(formData, sn)
-  return res.data
 }
 
 /**

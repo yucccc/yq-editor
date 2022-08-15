@@ -43,9 +43,9 @@ function getUrlParams() {
     gameId: appId || ckAppId,
   }
 }
-type FormConfigKey = 'scene' | 'configId' | 'loginType' | 'baseURL' | 'baseURL2'
+type FormConfigKey = 'custom-p-1' | 'loginType' | 'baseURL' | 'baseURL2'
 const formConfig: Record<FormConfigKey, FormConfig > = {
-  baseURL: {
+  'baseURL': {
     label: 'baseURL请求地址',
     formItemProps: { required: true },
     component: 'a-select',
@@ -61,16 +61,16 @@ const formConfig: Record<FormConfigKey, FormConfig > = {
       },
     ],
   },
-  baseURL2: {
+  'baseURL2': {
     label: '自定义请求地址',
     tips: '如果你填写了这个字段 则会覆盖上面的baseURL',
   },
-  scene: {
-    label: 'scene',
-    formItemProps: { required: true },
+  'custom-p-1': {
+    label: '自定义参数1',
+    tips: '如果你填写了这个字段 会被传递给请求config',
   },
   // ：1-参数拼接（游戏内跳转）；2-账密登录；3-第三方登录
-  loginType: {
+  'loginType': {
     label: '登录类型',
     formItemProps: {
       required: true,
@@ -91,10 +91,6 @@ const formConfig: Record<FormConfigKey, FormConfig > = {
         value: 3,
       },
     ],
-  },
-  configId: {
-    label: 'configId',
-    formItemProps: { required: true },
   },
 
 }
@@ -182,88 +178,78 @@ export const getFormConfig = () => {
   return formConfig
 }
 // 提供给外部的初始化请求 h会被合并到数据源中
+// 我们手动写了_mock在前面 实际业务中可以在config中取到是否使用mock 有利于我们进行调试开发
 export const initApiConfig: ApiConfig = {
   apis: [
     {
-      name: '信息',
-      url: '/api/base/info',
+      requestConfigName: name,
+      name: 'test-post-login',
+      url: '/_mock/login',
+      method: 'POST',
       index: 1,
       isUseMock: false,
+      isUseLoading: true,
+    },
+    {
+      name: 'test-get-info',
+      url: '/_mock/info',
+      index: 2,
+      isUseMock: false,
       method: 'GET',
       requestConfigName: name,
       isUseLoading: true,
     },
-    {
-      requestConfigName: name,
-      name: 'visit',
-      url: '/api/login/common',
-      method: 'POST',
-      index: 0,
-      isUseMock: false,
-      isUseLoading: true,
-    },
-    {
-      requestConfigName: name,
-      name: 'luck',
-      url: '/api/lottery/common',
-      index: 0,
-      isUseMock: false,
-      method: 'POST',
-      isUseLoading: true,
-    },
-    {
-      requestConfigName: name,
-      name: '签到',
-      url: '/api/sign-in/common',
-      index: 0,
-      isUseMock: false,
-      isUseLoading: true,
-      method: 'POST',
-    },
-    {
-      requestConfigName: name,
-      name: '累充有礼',
-      url: '/api/recharge/accumulation',
-      index: 0,
-      isUseMock: false,
-      isUseLoading: true,
-      method: 'POST',
-    },
-    {
-      requestConfigName: name,
-      name: '礼物列表',
-      url: '/api/gift/list',
-      index: 0,
-      isUseMock: false,
-      isUseLoading: true,
-      method: 'GET',
-      paramsSf: `
-      function fn(props) {
-        return {
-          way: 'lottery'
-        }
-      }
-      `,
-    },
-    {
-      requestConfigName: name,
-      name: '兑奖',
-      url: '/api/exchange/common',
-      index: 0,
-      isUseMock: false,
-      isUseLoading: true,
-      method: 'POST',
-
-    },
-    {
-      requestConfigName: name,
-      name: '分享',
-      url: '/api/exchange/common',
-      index: 0,
-      isUseMock: false,
-      isUseLoading: true,
-      method: 'POST',
-
-    },
+    // {
+    //   requestConfigName: name,
+    //   name: 'luck',
+    //   url: '/api/lottery/common',
+    //   index: 0,
+    //   isUseMock: false,
+    //   method: 'POST',
+    //   isUseLoading: true,
+    // },
+    // {
+    //   requestConfigName: name,
+    //   name: '签到',
+    //   url: '/api/sign-in/common',
+    //   index: 0,
+    //   isUseMock: false,
+    //   isUseLoading: true,
+    //   method: 'POST',
+    // },
+    // {
+    //   requestConfigName: name,
+    //   name: '礼物列表',
+    //   url: '/api/gift/list',
+    //   index: 0,
+    //   isUseMock: false,
+    //   isUseLoading: true,
+    //   method: 'GET',
+    //   paramsSf: `
+    //   function fn(props) {
+    //     return {
+    //       way: 'lottery'
+    //     }
+    //   }
+    //   `,
+    // },
+    // {
+    //   requestConfigName: name,
+    //   name: '兑奖',
+    //   url: '/api/exchange/common',
+    //   index: 0,
+    //   isUseMock: false,
+    //   isUseLoading: true,
+    //   method: 'POST',
+    // },
+    // {
+    //   requestConfigName: name,
+    //   name: '分享',
+    //   url: '/api/exchange/common',
+    //   index: 0,
+    //   isUseMock: false,
+    //   isUseLoading: true,
+    //   method: 'POST',
+    // },
   ],
 }

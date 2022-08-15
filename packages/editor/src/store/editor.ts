@@ -148,7 +148,7 @@ const state = {
   maxHistoryNumber: 6,
   preSetting: {
     shortName: '',
-    userInfo: '',
+    userInfo: null,
     cdnUrl: '',
     cdnSn: '',
   },

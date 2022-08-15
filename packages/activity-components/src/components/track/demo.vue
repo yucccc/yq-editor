@@ -8,7 +8,6 @@ export default defineComponent({
   components: {
     ActDemo,
   },
-  // https://yq-editor-oss.oss-cn-guangzhou.aliyuncs.com/hd_activities/1660284946218-apple-touch-icon.png
   setup() {
     // 是否在编辑子项目
     const currentSubId = ref<number | string | null>(null)
