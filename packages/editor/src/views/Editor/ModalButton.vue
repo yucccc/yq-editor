@@ -34,9 +34,10 @@ export default defineComponent({
         return { slot: 'action-set', componentsProps: {} }
       },
     },
+    hasNextStep: Boolean,
   },
   emits: ['change', 'update:value'],
-  setup(props: any, context) {
+  setup(props, context) {
     const state = reactive({
       modalVisible: false,
       type: props.value ? props.value.type : '',

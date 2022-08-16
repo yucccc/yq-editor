@@ -96,7 +96,7 @@ export interface UrlCommitType {
 export interface ComponentCommitType {
     // 触发的组件ID
     id: string
-    // 触发的事件 前期填写 后期由组件内部返回
+    // 触发的事件
     eventName: string
     // 传递给组件的参数
     sourceDataKey: string

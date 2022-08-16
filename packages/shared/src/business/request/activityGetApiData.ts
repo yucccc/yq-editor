@@ -11,7 +11,7 @@ import type { ApiConfig, FormConfig } from '@yq-editor/global-types'
 
 // 本地调试地址 需要跟进业务进行配置修改
 
-export const bcBUrl = 'http://localhost:3000/'
+export const bcBUrl = 'http://localhost:9993/'
 /**
  * 获取请求参数签名
  * @param params 请求参数Object
@@ -52,12 +52,12 @@ const formConfig: Record<FormConfigKey, FormConfig > = {
     subComponent: 'a-select-option',
     subComponentOptions: [
       {
-        text: '请求地址2',
-        value: '请求地址2',
+        text: '请求地址1',
+        value: bcBUrl,
       },
       {
         text: '请求地址2',
-        value: 'http://localhost:3000/',
+        value: bcBUrl,
       },
     ],
   },
@@ -104,9 +104,13 @@ export const request = new HRequest({
       try {
         // 这里的数据由提供端定制提供 因此能保证必须有该数据格式
         const editorStore = JSON.parse(localStorage.getItem('editor') || '{}')
+        console.log('%c [ editorStore ]-107-「activityGetApiData」', 'font-size:13px; background:pink; color:#bf2c9f;', editorStore)
+
         // 这里是保证有的 业务方需要保证存在
         // 取到用户填写的字段 params
-        const params = editorStore.page?.requestConfig[name] || {} as Record<FormConfigKey, any>
+
+        const params = (editorStore.page.requestConfig && editorStore.page.requestConfig[name]) || {} as Record<FormConfigKey, any>
+        console.log('%c [ params ]-111-「activityGetApiData」', 'font-size:13px; background:pink; color:#bf2c9f;', params)
 
         config.baseURL = params.baseURL
 
@@ -134,12 +138,12 @@ export const request = new HRequest({
           config!.headers!.timestamp = timestamp
           config!.headers!.sign = sign
         }
-        // TODO: 乱写的token 需要业务者自行修改
-        const token = editorStore.page.totalResData.visit.data
-        if (token) {
-        // 这里是业务者定的 所以一定要按照这个设置走 否则只能通过每一条请求配置自行设置
-          config!.headers!.token = token
-        }
+        // // TODO: 乱写的token 需要业务者自行修改
+        // const token = editorStore.page.totalResData.visit.data
+        // if (token) {
+        // // 这里是业务者定的 所以一定要按照这个设置走 否则只能通过每一条请求配置自行设置
+        //   config!.headers!.token = token
+        // }
       }
       catch (error) {
         // TODO: 需要业务自行处理
@@ -183,7 +187,7 @@ export const initApiConfig: ApiConfig = {
   apis: [
     {
       requestConfigName: name,
-      name: 'test-post-login',
+      name: 'testPostLogin',
       url: '/_mock/login',
       method: 'POST',
       index: 1,
@@ -191,7 +195,7 @@ export const initApiConfig: ApiConfig = {
       isUseLoading: true,
     },
     {
-      name: 'test-get-info',
+      name: 'testGetInfo',
       url: '/_mock/info',
       index: 2,
       isUseMock: false,
