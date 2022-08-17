@@ -1,6 +1,5 @@
 // 设置交互类型
 export type ActionType = 
-'' 
 | 'request' 
 | 'code' 
 | 'url' 
@@ -37,6 +36,7 @@ export interface CodeCommitType {
 
 export interface UrlCommitType {
     to: string
+    target: '_self' | '_blank' | '_parent' | '_top'
   }
 
   export interface ToastCommitType {
@@ -127,7 +127,7 @@ export interface twitterShareCommitType {
     nextStep: ActionSetType
   }
 export interface ActionSetType {
-    type: ActionType
+    type: ActionType 
     request?: RequestCommitType
     code?: CodeCommitType
     url?: UrlCommitType
@@ -138,6 +138,8 @@ export interface ActionSetType {
     twitterShare?: twitterShareCommitType
     layer?: LayerCommitType
   }
+
+
   
   export interface twCommitType {
     url: string
@@ -147,3 +149,15 @@ export interface ActionSetType {
     via: string
     nextStep: ActionSetType
   }
+
+export interface ActionMap {
+  request: (v: RequestCommitType) => void
+  code: (v: CodeCommitType) => void
+  url: (v: UrlCommitType) => void
+  layer: (v: LayerCommitType) => void
+  toast: (v: ToastCommitType) => void
+  popup: (v: PopupCommitType) => void
+  component: (v: ComponentCommitType) => void
+  facebookShare: (v: facebookShareCommitType) => void
+  twitterShare: (v: twitterShareCommitType) => void
+}
